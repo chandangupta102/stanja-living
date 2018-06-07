@@ -64,6 +64,12 @@ let common = {
       }
     }),
 
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: 'jquery',
+      "window.jQuery": 'jquery',
+    }),
+
     new CopyWebpackPlugin([
     ])
   ],

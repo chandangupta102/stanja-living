@@ -8,7 +8,11 @@ import ngMaterial from 'angular-material';
 import uiRouter from 'angular-ui-router';
 import 'lodash';
 import 'restangular';
-
+import './nav';
+import './body';
+import './footer';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/main.scss';
 import 'angular-material/angular-material.css';
 
@@ -25,7 +29,10 @@ export default angular.module('stanja-living', [
   ngSanitize,
   ngMaterial,
   'restangular',
-  uiRouter
+  uiRouter,
+  'nav',
+  'footer',
+  'info'
 ])
 .config(appConfig)
 .config(appRoute)
