@@ -2,7 +2,7 @@
 
 var http = require("http");
 var events = require("events");
-
+require("./express.js");
 
 var eventEmitter = new events.EventEmitter();
 
