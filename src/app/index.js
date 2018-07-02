@@ -2,8 +2,9 @@
 
 var http = require("http");
 var events = require("events");
-require("./express.js");
-require("./write-stream.js");
+// require("./express.js");
+// require("./write-stream.js");
+require("./read-stream.js");
 
 var eventEmitter = new events.EventEmitter();
 
