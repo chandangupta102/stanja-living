@@ -3,6 +3,7 @@
 var http = require("http");
 var events = require("events");
 require("./express.js");
+require("./write-stream.js");
 
 var eventEmitter = new events.EventEmitter();
 
