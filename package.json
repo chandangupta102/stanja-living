@@ -11,7 +11,11 @@
     "serve:prod": "webpack-dev-server --history-api-fallback --inline --progress --hot --env prod",
     "test": "npm run lint && karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
-    "lint": "eslint src/ && htmlhint src/ && sass-lint -v"
+    "lint": "eslint src/ && htmlhint src/ && sass-lint -v",
+    "start-server": "node ./src/app/index.js",
+    "start-server:debug": "node --inspect ./src/app/index.js",
+    "start-dev-server": "nodemon ./src/app/index.js",
+    "start-dev-server:debug": "nodemon --inspect ./src/app/index.js"
   },
   "dependencies": {
     "angular": "^1.6.0",
@@ -22,6 +26,7 @@
     "angular-sanitize": "^1.6.0",
     "angular-ui-router": "^1.0.0-beta.3",
     "bootstrap": "^3.3.7",
+    "formidable": "^1.2.1",
     "jquery": "^3.3.1",
     "material-design-icons": "^3.0.1",
     "restangular": "^1.5.2"
@@ -35,8 +40,6 @@
     "chai": "^3.5.0",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
-    "webpack-angular-dgeni-plugin": "^0.0.1",
-    "npm-run-all": "^3.1.2",
     "eslint": "^3.9.1",
     "eslint-config-angular": "^0.5.0",
     "eslint-plugin-angular": "^1.4.1",
@@ -56,6 +59,8 @@
     "mocha": "^3.2.0",
     "ng-annotate-loader": "^0.2.0",
     "node-sass": "^3.10.1",
+    "nodemon": "^1.17.5",
+    "npm-run-all": "^3.1.2",
     "postcss-loader": "^1.1.1",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
@@ -63,6 +68,7 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
+    "webpack-angular-dgeni-plugin": "^0.0.1",
     "webpack-dev-server": "^1.16.1",
     "webpack-merge": "^0.14.1"
   }
