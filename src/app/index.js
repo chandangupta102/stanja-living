@@ -8,6 +8,35 @@ var formidable = require('formidable');
 // require("./read-stream.js");
 require("./url.js");
 
+
+var mongodb = require('mongodb');
+var mongoClient = mongodb.MongoClient;
+
+var url = 'mongodb://localhost:27017/jdproject';
+
+mongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
+  if(err) {
+    console.log(err);
+    return;
+  }
+      createDocuments(db, function() {
+	    db.close();
+	  });
+});
+
+var createDocuments = function(db, callback) {
+  
+     var collection = db.collection("jduser");
+     collection.insert([
+	{firstname : "Rams",lastname: "Posa",emailid: "rams@journaldev.com"}, 
+	{firstname : "Mani",lastname: "Nulu",emailid: "mani@journaldev.com"},  
+	{firstname : "Bhargs",lastname: "Nulu",emailid: "Bhargs@journaldev.com"}, 
+	], function(err, result) {
+	callback(result);
+      });
+}
+
+
 var eventEmitter = new events.EventEmitter();
 
 
